@@ -1,8 +1,8 @@
 import { readFile, readdir, writeFile } from "node:fs/promises";
-import { join, resolve, dirname } from "node:path";
+import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const specsPath = resolve(join(dirname(fileURLToPath(import.meta.url)), "../specs"));
+const specsPath = resolve(join(dirname(fileURLToPath(import.meta.url)), "../../public/specs"));
 const fileNames = await readdir(specsPath);
 const specEntries = await Promise.all(
   fileNames.map(async (fileName) => {
