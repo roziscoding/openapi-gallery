@@ -10,59 +10,9 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="bg-zinc-950">
-    <canvas id="canvas"></canvas>
     <div class="flex flex-col items-center py-10">
       <slot />
     </div>
   </body>
 </html>
-<style>
-  body {
-    margin: 0;
-  }
-  #canvas {
-    position: fixed;
-    z-index: -1;
-  }
-</style>
-<script>
-  const cnv = document.getElementById("canvas") as HTMLCanvasElement;
 
-  if (!cnv) throw new Error("Cannot render background");
-
-  //Get context and screen size;
-  var ctx = cnv.getContext("2d");
-  var W = window.innerWidth;
-  var H = window.innerHeight;
-
-  if (!ctx) throw new Error("Cannot render background");
-
-  //Set Canvas and Background Color;
-  cnv.width = W;
-  cnv.height = H;
-  ctx.fillStyle = "#112";
-  ctx.fillRect(0, 0, W, H);
-
-  //Glow effect;
-  ctx.shadowBlur = 10;
-  ctx.shadowColor = "white";
-
-  function animate() {
-    if (!ctx) return;
-
-    //Random position and size of stars;
-    let x = W * Math.random();
-    let y = H * Math.random();
-    let r = 2.5 * Math.random();
-
-    //Draw the stars;
-    ctx.beginPath();
-    ctx.fillStyle = "white";
-    ctx.arc(x, y, r, 0, Math.PI * 2);
-    ctx.fill();
-
-    //Using setTimeout instead of window.requestAnimationFrame for slower speed... window.requestAnimationFrame is approximately equal to setTimeout(func, 17);
-    setTimeout(animate, 100);
-  }
-  animate();
-</script>
