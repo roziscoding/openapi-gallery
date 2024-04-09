@@ -1,0 +1,20 @@
+<script lang="ts" setup></script>
+<template>
+  <input
+    :class="[
+      'border-2',
+      'border-slate-500',
+      'text-slate-500',
+      'rounded-lg',
+      'h-10',
+      'p-5',
+      'w-11/12',
+      'transition-all',
+      'outline-slate-700',
+      'duration-100',
+      'ease-linear',
+    ]"
+    type="text"
+    placeholder="Search..."
+  />
+</template>
