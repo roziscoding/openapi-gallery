@@ -1,4 +1,6 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+defineEmits<{ (e: "search", term: string): void }>();
+</script>
 <template>
   <input
     :class="[
@@ -16,5 +18,6 @@
     ]"
     type="text"
     placeholder="Search..."
+    @input="($event) => $emit('search', ($event.target as HTMLInputElement).value)"
   />
 </template>
