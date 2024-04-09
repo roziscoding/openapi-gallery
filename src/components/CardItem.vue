@@ -31,7 +31,7 @@ const { item, baseUrl } = toRefs(props);
       </a>
       <a
         target="_blank"
-        :href="`https://editor.swagger.io/?url=${baseUrl.protocol}/${baseUrl.host}/specs/${item.id}.json`"
+        :href="`https://editor.swagger.io/?url=${baseUrl.protocol}//${baseUrl.host}/specs/${item.id}.json`"
         class="p-3 bg-slate-800 rounded-lg text-white text-sm mt-2 flex md:w-full lg:w-auto"
       >
         <BookOpenIcon class="h-5 w-5 text-white mr-0 md:mr-3" />
