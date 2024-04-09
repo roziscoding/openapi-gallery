@@ -2,7 +2,7 @@
 import specs from "../../public/specs/index.json" with { type: "json" };
 import CardItem from "./CardItem.vue";
 
-const props = defineProps<{baseUrl: URL}>()
+defineProps<{ baseUrl: URL }>()
 
 const items = specs
 </script>
